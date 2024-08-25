@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:33:38 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/11 16:20:23 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/08/15 17:39:35 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 #include <iostream>
 #include <string>
-
-
+#include <limits>
+# include <cctype>
+# include <cstdlib>
+# include <iomanip>
 
 class Contact
 {

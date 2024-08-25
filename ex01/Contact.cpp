@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:04:11 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/11 16:30:57 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/08/15 17:12:13 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,12 +115,12 @@ Contact Contact::setContact()
 	std::cin >> lastName;
 	if(std::cin.eof())
 		return (Contact("", "", "", "", ""));
-	std::cout << "Enter the nick name: " << std::endl;
 	if (isNumber(lastName))
 	{
 		std::cout << "Error: Last name must be a string" << std::endl;
 		return (Contact("", "", "", "", ""));
 	}
+	std::cout << "Enter the nick name: " << std::endl;
 	std::cin >> nickName;
 	if(std::cin.eof())
 		return (Contact("", "", "", "", ""));
