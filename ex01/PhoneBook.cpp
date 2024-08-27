@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:13:21 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/16 13:51:22 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/08/27 17:23:11 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void PhoneBook::addContact(Contact contact)
 	}
 	else
 	{
-		// this->nbContacts = 0;
-		this->contacts[0] = contact;
+		this->nbContacts = 0;
+		this->contacts[this->nbContacts] = contact;
+		this->nbContacts++;
 	}
 }
 

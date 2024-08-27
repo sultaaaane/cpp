@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:04:11 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/15 17:12:13 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/08/27 17:55:14 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,18 @@ int isNumber(std::string str)
 	return (1);
 }
 
+int has_whitespace(std::string str)
+{
+	int i = 0;
+	while (str[i])
+	{
+		if (isspace(str[i]))
+			return 1;
+		i++;
+	}
+	return 0;
+}
+
 Contact Contact::setContact()
 {
 	std::string firstName;
@@ -103,45 +115,70 @@ Contact Contact::setContact()
 	std::string phoneNumber;
 	std::string darkestSecret;
 	std::cout << "Enter the first name: " << std::endl;
-	std::cin >> firstName;
+	std::getline(std::cin, firstName,'\n');
 	if(std::cin.eof())
 		return (Contact("", "", "", "", ""));
+	if (firstName.empty() || has_whitespace(firstName))
+	{
+		std::cout << "Empty parameter ." << std::endl;
+		return (Contact("", "", "", "", ""));
+	}
 	if (isNumber(firstName))
 	{
 		std::cout << "Error: First name must be a string" << std::endl;
 		return (Contact("", "", "", "", ""));
 	}
 	std::cout << "Enter the last name: " << std::endl;
-	std::cin >> lastName;
+	std::getline(std::cin, lastName,'\n');
 	if(std::cin.eof())
 		return (Contact("", "", "", "", ""));
+	if (lastName.empty() || has_whitespace(lastName))
+	{
+		std::cout << "Empty parameter ." << std::endl;
+		return (Contact("", "", "", "", ""));
+	}
 	if (isNumber(lastName))
 	{
 		std::cout << "Error: Last name must be a string" << std::endl;
 		return (Contact("", "", "", "", ""));
 	}
 	std::cout << "Enter the nick name: " << std::endl;
-	std::cin >> nickName;
+	std::getline(std::cin,nickName,'\n');
 	if(std::cin.eof())
 		return (Contact("", "", "", "", ""));
+	if (nickName.empty() || has_whitespace(nickName))
+	{
+		std::cout << "Empty parameter ." << std::endl;
+		return (Contact("", "", "", "", ""));
+	}
 	if (isNumber(nickName))
 	{
 		std::cout << "Error: Nick name must be a string" << std::endl;
 		return (Contact("", "", "", "", ""));
 	}
 	std::cout << "Enter the phone number: " << std::endl;
-	std::cin >> phoneNumber;
+	std::getline(std::cin,phoneNumber,'\n');
 	if(std::cin.eof())
 		return (Contact("", "", "", "", ""));
+	if (phoneNumber.empty() || has_whitespace(phoneNumber))
+	{
+		std::cout << "Empty parameter ." << std::endl;
+		return (Contact("", "", "", "", ""));
+	}
 	if (!isNumber(phoneNumber))
 	{
 		std::cout << "Error: Phone number must be a number" << std::endl;
 		return (Contact("", "", "", "", ""));
 	}
 	std::cout << "Enter the darkest secret: " << std::endl;
-	std::cin >> darkestSecret;
+	std::getline(std::cin,darkestSecret,'\n');
 	if(std::cin.eof())
-		return (Contact("", "", "", "", ""));	
+		return (Contact("", "", "", "", ""));
+	if (darkestSecret.empty() || has_whitespace(darkestSecret))
+	{
+		std::cout << "Empty parameter ." << std::endl;
+		return (Contact("", "", "", "", ""));
+	}
 	if (firstName.empty() || lastName.empty() || nickName.empty() || phoneNumber.empty() || darkestSecret.empty())
 	{
 		std::cout << "Error: Empty field" << std::endl;

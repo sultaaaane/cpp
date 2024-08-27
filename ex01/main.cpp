@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:53:33 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/15 17:43:19 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/08/27 17:43:28 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int main()
             }
             else
                 std::cout << "Invalid contact input. Contact not added." << std::endl;
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
         else if (command == "SEARCH")
         {
