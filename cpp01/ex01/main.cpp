@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 11:24:17 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/03 11:33:17 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/08/28 12:52:08 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/08/29 18:08:04 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-int main(int ac,char **av)
+int main()
 {
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
+	int i = 0;
+	int n = 0;
+	Zombie *z1 = zombieHorde(n,"su");
+	while (i < n)
 	{
-		for (int i = 1; i < ac; i++)
-		{
-			for (int j = 0; av[i][j]; j++)
-				std::cout << (char)toupper(av[i][j]);
-		}
+		z1[i].announce();
+		i++;
 	}
-	std::cout << std::endl;
-	return (0);
+	if (n <= 0 || !z1)
+		return 0;
+	delete[] z1;
 }
