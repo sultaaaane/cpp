@@ -1,4 +1,4 @@
-NAME = Brain
+NAME = HiBrain
 SRC =  main.cpp
 	   
 OBJ = $(SRC:.cpp=.o)

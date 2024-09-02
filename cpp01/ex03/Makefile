@@ -1,5 +1,8 @@
-NAME = 
-SRC =  
+NAME = guns
+SRC =  main.cpp \
+	   HumanA.cpp \
+	   HumanB.cpp \
+	   Weapon.cpp \
 	   
 OBJ = $(SRC:.cpp=.o)
 CXX = c++

@@ -1,9 +1,10 @@
-NAME = 
-SRC =  
+NAME = sed
+SRC =  main.cpp \
+	   sed.cpp \
 	   
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 
 all : $(NAME)
 
