@@ -1,5 +1,6 @@
-NAME = 
-SRC =  
+NAME = Harl
+SRC =  main.cpp \
+	   Harl.cpp
 	   
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
