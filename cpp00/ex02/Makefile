@@ -4,7 +4,7 @@ SRC =  tests.cpp \
 	   
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 all : $(NAME)
 

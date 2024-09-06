@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:53:33 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/29 12:16:53 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:59:02 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int main()
             }
             phoneBook.searchContact();
             std::cout << "Search completed" << std::endl;
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
         else if (command == "EXIT")
         {

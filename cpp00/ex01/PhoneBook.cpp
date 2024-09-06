@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:13:21 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/27 17:23:11 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/05 17:05:10 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void PhoneBook::addContact(Contact contact)
 	{
 		this->contacts[this->nbContacts] = contact;
 		this->nbContacts++;
+		if (this->nbinc < 8)
+			this->nbinc++;
 	}
 	else
 	{
@@ -30,6 +32,7 @@ void PhoneBook::addContact(Contact contact)
 PhoneBook::PhoneBook()
 {
 	this->nbContacts = 0;
+	this->nbinc = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -49,7 +52,7 @@ void PhoneBook::searchContact()
 
 	i = 0;
 	std::cout << " index    |first name| last name| nickname " << std::endl;
-	while (i < this->nbContacts)
+	while (i < this->nbinc)
 	{
 		std::cout << "here" << std::endl;
 		std::cout << std::setw(10) << i << "|";
@@ -86,7 +89,14 @@ void PhoneBook::searchContact()
 	std::cin >> index;
 	if (std::cin.eof())
 		return ;
-	if (index >= this->nbContacts || index < 0 || index >= 8)
+	if (std::cin.fail())
+	{
+		std::cout << "Invalid input" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		return ;
+	}
+	if (index >= this->nbinc || index < 0 || index >= 8)
 	{
 		std::cout << "Invalid index" << std::endl;
 		return ;

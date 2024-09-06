@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:36:08 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/28 12:32:26 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/05 16:59:25 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int Account::_totalNbWithdrawals = 0;
 Account::Account(int initial_deposit)
 {
 	_displayTimestamp();
-	this->_totalAmount = initial_deposit;
+	this->_totalAmount += initial_deposit;
 	this->_amount = initial_deposit;
 	this->_accountIndex = _nbAccounts;
 	this->_nbAccounts++;
-	std::cout << " index:" << _nbAccounts << ";amount:" << initial_deposit << ";created" << std::endl;
+	std::cout << " index:" << _nbAccounts - 1 << ";amount:" << initial_deposit << ";created" << std::endl;
 	return;
 }
 

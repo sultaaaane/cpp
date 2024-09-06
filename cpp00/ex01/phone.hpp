@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:33:38 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/15 17:39:35 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/05 16:57:41 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ class PhoneBook
 	private:
 		Contact contacts[8];
 		int nbContacts;
+		int nbinc;
 	public:
 		PhoneBook();
 		~PhoneBook();
