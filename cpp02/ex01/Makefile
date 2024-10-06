@@ -1,5 +1,7 @@
-NAME = megaphone
-SRC = megaphone.cpp
+NAME = Harl
+SRC =  main.cpp \
+	   Harl.cpp
+	   
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98

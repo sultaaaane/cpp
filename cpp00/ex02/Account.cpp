@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:36:08 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/09/05 16:59:25 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/06 17:27:30 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ Account::Account(int initial_deposit)
 	this->_amount = initial_deposit;
 	this->_accountIndex = _nbAccounts;
 	this->_nbAccounts++;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 	std::cout << " index:" << _nbAccounts - 1 << ";amount:" << initial_deposit << ";created" << std::endl;
 	return;
 }

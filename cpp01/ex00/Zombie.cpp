@@ -6,11 +6,13 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:52:00 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/29 17:29:29 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/30 16:07:52 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+
 
 Zombie::Zombie(std::string name)
 {
@@ -29,5 +31,5 @@ void Zombie::announce()
 
 Zombie::~Zombie()
 {
-	std::cout << get_name() << "has been destroyed"<< std::endl;
+	std::cout << get_name() << " has been destroyed"<< std::endl;
 }

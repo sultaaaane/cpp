@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 12:52:08 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/09/08 10:54:07 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/10/03 17:25:46 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/10/03 17:27:23 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# include <iostream>
+# include <fstream>
+# include <string>
+# include <limits>
+# include <cctype>
+# include <cstdlib>
+# include <iomanip>
+# include <fcntl.h>
 
-int main()
+class Fixed
 {
-	Zombie *z1 = newZombie("z1");
-	z1->announce();
-	randomChump("z2");
-	delete z1;
-}
+	private:
+		int value;
+		static const int bits = 8;
+	public:
+		Fixed();
+		Fixed(const Fixed &f);
+		~Fixed();
+		Fixed &operator=(const Fixed &f);
+		int getRawBits(void) const;
+		void setRawBits(int const raw);	
+};

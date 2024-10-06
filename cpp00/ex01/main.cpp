@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 16:53:33 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/09/06 12:59:02 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/06 18:46:48 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int main()
     
     while (1)
     {
-        std::cout << "Enter a command: " << std::endl;
+        
         while (1)
         {
+            std::cout << "Enter a command: " << std::endl;
             std::getline(std::cin, command, '\n');
             if (std::cin.eof())
 		    	return 1;
@@ -53,6 +54,8 @@ int main()
             }
             phoneBook.searchContact();
             std::cout << "Search completed" << std::endl;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            continue;
         }
         else if (command == "EXIT")
         {

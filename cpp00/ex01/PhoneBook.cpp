@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:13:21 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/09/05 17:05:10 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/06 18:21:56 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void PhoneBook::searchContact()
 	std::cout << " index    |first name| last name| nickname " << std::endl;
 	while (i < this->nbinc)
 	{
-		std::cout << "here" << std::endl;
 		std::cout << std::setw(10) << i << "|";
 		firstName = this->contacts[i].getFirstName();
 		lastName = this->contacts[i].getLastName();

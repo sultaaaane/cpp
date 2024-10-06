@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 10:42:44 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/09/05 14:31:42 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/08 12:13:23 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void Harl::complain(std::string level)
 		error();
 		break;
 	default:
-		std::cout << "level unknown :" << level << "." << std::endl;
+		std::cout << "[ Probably complaining about insignificant problems ]"  << std::endl;
 		break;
 	}
 	

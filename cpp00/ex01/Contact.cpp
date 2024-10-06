@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 14:04:11 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/27 17:55:14 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/06 18:20:56 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,7 +195,7 @@ bool Contact::isValid()
 		return false;
 	if (!isNumber(phoneNumber) || isNumber(firstName) || isNumber(lastName) || isNumber(nickName))
 		return false;
-	if (phoneNumber.length() < 10 || phoneNumber.length() > 15)
+	if (phoneNumber.length() < 7 || phoneNumber.length() > 15)
 		return false;
 	return true;
 }

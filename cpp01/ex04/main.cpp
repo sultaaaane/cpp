@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 19:52:14 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/09/01 18:45:36 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/09/08 11:43:10 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(int ac,char **av)
 	file.open(filename.c_str(), std::ios::in);
 	if (!file.is_open())
 	{
-		std::cout << "file not found ." << std::endl;
+		std::cout << "file not found." << std::endl;
 		return 0;
 	}
 	file.close();
