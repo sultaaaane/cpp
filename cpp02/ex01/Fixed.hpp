@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:25:46 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/07 21:30:37 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/10/07 22:33:53 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 };
+
 std::ostream &operator<<(std::ostream &out, Fixed const &f);
