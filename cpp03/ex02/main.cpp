@@ -16,21 +16,13 @@
 
 int main()
 {
-	ClapTrap clap("ClapTrap");
-	ScavTrap scav("ScavTrap");
-	FragTrap frag("FragTrap");
+	// FragTrap frag("FragTrap");
 
-	clap.attack("target");
-	clap.takeDamage(10);
-	clap.beRepaired(5);
-	
-	scav.attack("target");
-	scav.takeDamage(10);
-	scav.beRepaired(5);
+	// frag.attack("target");
+	// frag.takeDamage(10);
+	// frag.beRepaired(5);
 
-	frag.attack("target");
-	frag.takeDamage(10);
-	frag.beRepaired(5);
-
+	ClapTrap *ptr = new ScavTrap("Hello");
+	delete ptr;
 	return (0);
 }
