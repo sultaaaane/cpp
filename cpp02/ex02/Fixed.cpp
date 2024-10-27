@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:25:43 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/07 21:30:03 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/10/22 17:12:09 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ Fixed &Fixed::max(Fixed &a, Fixed &b)
 
 const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
-	return (a > b ? a : b);
+	return (a < b ? a : b);
 }
 
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b)

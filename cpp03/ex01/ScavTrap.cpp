@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:19:34 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/13 14:28:46 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:06:56 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ ScavTrap::~ScavTrap()
 ScavTrap &ScavTrap::operator=(const ScavTrap &c)
 {
 	std::cout << "ScavTrap assignation operator called" << std::endl;
+	if (this == &c)
+		return (*this);
 	this->setName(c.getName());
 	this->setHitpoints(c.getHitpoints());
 	this->setEnergyPoints(c.getEnergyPoints());

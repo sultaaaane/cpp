@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:34:26 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/07 21:27:48 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/10/22 17:02:33 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,13 @@ int	main(void)
 	Fixed const c(42.42f);
 	Fixed const d(b);
 	a = Fixed(1234.4321f);
-	std::cout << "a is " << a.getRawBits() << std::endl;
-	std::cout << "b is " << b.getRawBits() << std::endl;
-	std::cout << "c is " << c.getRawBits() << std::endl;
-	std::cout << "d is " << d.getRawBits() << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	std::cout << "a is " << a.toFloat() << " as floatj" << std::endl;
-	std::cout << "b is " << b.toFloat() << " as floatj" << std::endl;
-	std::cout << "c is " << c.toFloat() << " as floatj" << std::endl;
-	std::cout << "d is " << d.toFloat() << " as floatj" << std::endl;
 	return (0);
 }

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 17:25:46 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/22 12:16:27 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/10/11 16:19:24 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/10/27 22:01:51 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
+# include "ClapTrap.hpp"
 # include <iostream>
 # include <fstream>
 # include <string>
@@ -22,19 +23,16 @@
 # include <iomanip>
 # include <fcntl.h>
 
-class Fixed
+class ScavTrap : public virtual ClapTrap
 {
-	private:
-		int value;
-		static const int bits = 8;
-		
 	public:
-		Fixed();
-		Fixed(const Fixed &f);
-		~Fixed();
-		Fixed &operator=(const Fixed &f);
-		int getRawBits(void) const;
-		void setRawBits(int const raw);	
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &c);
+		~ScavTrap();
+		ScavTrap &operator=(const ScavTrap &c);
+		void attack(std::string const & target);
+		void guardGate();
 };
 
 #endif

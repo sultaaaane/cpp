@@ -74,7 +74,9 @@
 		"locale": "cpp",
 		"mutex": "cpp",
 		"ratio": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"__functional_03": "cpp",
+		"filesystem": "cpp"
 	},
 	"editor.fontFamily": "Fira Code",
 	"editor.fontLigatures": true,

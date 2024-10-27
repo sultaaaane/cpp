@@ -5,24 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 17:34:26 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/22 17:11:29 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/10/11 16:01:18 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/10/27 22:50:38 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int main(void)
+int main()
 {
-	Fixed a;
-	Fixed const b(Fixed(5.05f) * Fixed(2));
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
-	std::cout << Fixed::min(a, b) << std::endl;
-	return 0;
+	DiamondTrap diamond("DiamondTrap");
+
+	diamond.attack("target");
+	diamond.takeDamage(10);
+	diamond.beRepaired(5);
+	diamond.whoAmI();
+
+	return (0);
 }
