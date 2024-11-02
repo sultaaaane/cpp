@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:19:34 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/27 22:07:22 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:55:06 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ScavTrap::attack(const std::string &target)
 {
 	if (getHitpoints() >= 1 && getEnergyPoints() >= 1)
 	{
-		std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " << getName() << " attacks " << target << " , causing " << getAttackDamage() << " points of damage!" << std::endl;
 		setEnergyPoints(getEnergyPoints() - 1);
 	}
 	else

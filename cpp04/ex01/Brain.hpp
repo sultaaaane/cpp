@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 16:01:18 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/02 15:08:19 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/10/30 18:39:41 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/10/30 18:44:43 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-int main()
+# include "Animal.hpp"
+# include <iostream>
+# include <fstream>
+# include <string>
+# include <limits>
+# include <cctype>
+# include <cstdlib>
+# include <iomanip>
+# include <fcntl.h>
+
+class Brain
 {
-	ClapTrap claptrap;
-	ClapTrap claptrap2(claptrap);
-	ClapTrap claptrap3 = claptrap;
-
-	claptrap.attack("target");
-	claptrap.takeDamage(5);
-	claptrap.beRepaired(5);
-	return (0);
-}
+	private:
+			
+};

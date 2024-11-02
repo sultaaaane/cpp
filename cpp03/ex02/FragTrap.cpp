@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 21:32:52 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/27 22:07:17 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:54:53 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void FragTrap::attack(const std::string &target)
 {
 	if (getHitpoints() >= 1 && getEnergyPoints() >= 1)
 	{
-		std::cout << "FragTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+		std::cout << "FragTrap " << getName() << " attacks " << target << " , causing " << getAttackDamage() << " points of damage!" << std::endl;
 		setEnergyPoints(getEnergyPoints() - 1);
 	}
 	else
@@ -68,4 +68,3 @@ void FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << getName() << " high fives guys!" << std::endl;
 }
-

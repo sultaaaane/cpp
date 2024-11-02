@@ -1,25 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 16:01:18 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/02 15:08:19 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/10/30 18:39:34 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/10/30 18:43:32 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Brain.hpp"
 
-int main()
-{
-	ClapTrap claptrap;
-	ClapTrap claptrap2(claptrap);
-	ClapTrap claptrap3 = claptrap;
-
-	claptrap.attack("target");
-	claptrap.takeDamage(5);
-	claptrap.beRepaired(5);
-	return (0);
-}

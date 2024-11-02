@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:02:02 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/13 14:25:03 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/02 16:06:12 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string name;
 		int hitpoints;
 		int energy_points;

@@ -1,4 +1,4 @@
-NAME = Fixed
+NAME = ClapTrap
 SRC =  ClapTrap.cpp \
 	   main.cpp
 OBJ = $(SRC:.cpp=.o)

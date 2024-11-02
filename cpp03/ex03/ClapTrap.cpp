@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:01:43 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/27 22:07:31 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:56:26 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : hitpoints(10), energy_points(10), attack_damage(0)
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : hitpoints(10), energy_points(10), attack_damage(0)
+ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
 	std::cout << "ClapTrap constructor called" << std::endl;
@@ -50,12 +50,12 @@ void ClapTrap::attack(const std::string &target)
 {
 	if (hitpoints >= 1 && energy_points >= 1)
 	{
-		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attack_damage << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << name << " attacks " << target << " , causing " << attack_damage << " points of damage!" << std::endl;
 		energy_points--;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << name << " is out of energy points! or dead" << std::endl;
+		std::cout << "ClapTrap " << name << " is out of energy points!" << std::endl;
 	}
 }
 
@@ -65,18 +65,28 @@ void ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << "ClapTrap " << name << " takes " << amount << " points of damage!" << std::endl;
 		hitpoints -= amount;
-		energy_points--;
+	}
+	else
+	{
+		std::cout << "ClapTrap " << name << " is already dead!" << std::endl;
 	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (hitpoints >= 1)
+	if (hitpoints <= 0)
 	{
-		std::cout << "ClapTrap " << name << " is being repaired for " << amount << " points!" << std::endl;
-		hitpoints += amount;
-		energy_points--;
+		std::cout << "ClapTrap " << name << " is already dead!" << std::endl;
+		return ;
 	}
+	if (energy_points <= 0)
+	{
+		std::cout << "ClapTrap " << name << " is out of energy points!" << std::endl;
+		return ;
+	}
+	std::cout << "ClapTrap " << name << " has been repaired for " << amount << " points of damage!" << std::endl;
+	hitpoints += amount;
+	energy_points--;
 }
 
 void ClapTrap::setName(std::string name)

@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:28:23 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/27 22:50:11 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:38:27 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &c)
 	if (this == &c)
 		return (*this);
 	this->name = c.name;
-	this->setHitpoints(c.getHitpoints());
-	this->setEnergyPoints(c.getEnergyPoints());
-	this->setAttackDamage(c.getAttackDamage());
+	this->setHitpoints(FragTrap::getHitpoints());
+	this->setEnergyPoints(ScavTrap::getEnergyPoints());
+	this->setAttackDamage(FragTrap::getAttackDamage());
 	return (*this);
 }
 
 void DiamondTrap::attack(const std::string &target)
 {
-	FragTrap::attack(target);
+	ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()

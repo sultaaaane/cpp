@@ -1,4 +1,4 @@
-NAME = Fixed
+NAME = DiamondTrap
 SRC =  ClapTrap.cpp \
 	   ScavTrap.cpp \
 	   FragTrap.cpp \
