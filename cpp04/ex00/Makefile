@@ -3,11 +3,12 @@ SRC =  main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp  \
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
