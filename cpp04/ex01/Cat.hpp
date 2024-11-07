@@ -6,13 +6,14 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 23:13:10 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/30 18:40:54 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:14:14 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 # include <iostream>
 # include <fstream>
 # include <string>
@@ -26,6 +27,7 @@ class Cat : public Animal
 {
 	protected:
 		std::string type;
+		Brain *brain;
 	public:
 		Cat();
 		Cat(std::string name);
@@ -33,4 +35,5 @@ class Cat : public Animal
 		virtual ~Cat();
 		Cat &operator=(const Cat &c);
 		void  makeSound() const;
+		
 };

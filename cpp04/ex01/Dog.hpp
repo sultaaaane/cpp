@@ -6,13 +6,14 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 23:11:12 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/30 18:40:48 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:13:54 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 # include <iostream>
 # include <fstream>
 # include <string>
@@ -26,6 +27,7 @@ class Dog : public Animal
 {
 	protected:
 		std::string type;
+		Brain *brain;
 	public:
 		Dog();
 		Dog(std::string name);

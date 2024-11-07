@@ -6,10 +6,9 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:01:18 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/10/29 18:40:18 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:29:03 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Animal.hpp"
 #include "Dog.hpp"
@@ -17,13 +16,16 @@
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-return 0;
+	const int numAnimals = 10;
+	Animal* animals[numAnimals];
+	for (int i = 0; i < numAnimals / 2; ++i) {
+		animals[i] = new Dog();
+	}
+	for (int i = numAnimals / 2; i < numAnimals; ++i) {
+		animals[i] = new Cat();
+	}
+	for (int i = 0; i < numAnimals; ++i) {
+		delete animals[i];
+	}
+	return 0;
 }
