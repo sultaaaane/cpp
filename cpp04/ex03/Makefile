@@ -1,8 +1,10 @@
-NAME = Fixed
-SRC =  main.cpp\
+NAME = Animal
+SRC =  main.cpp \
+		
+
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
 
 all : $(NAME)
 

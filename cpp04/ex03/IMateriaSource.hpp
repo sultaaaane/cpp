@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 16:01:18 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/08 11:10:26 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/11/08 11:26:17 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/11/08 11:26:49 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#pragma once
 
-int main()
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
+# include <iostream>
+# include <fstream>
+# include <string>
+# include <limits>
+# include <cctype>
+# include <cstdlib>
+# include <iomanip>
+# include <fcntl.h>
+
+class IMateriaSource
 {
-	const int numAnimals = 10;
-	Animal* animals[numAnimals];
-	for (int i = 0; i < numAnimals / 2; ++i) {
-		animals[i] = new Dog();
-	}
-	for (int i = numAnimals / 2; i < numAnimals; ++i) {
-		animals[i] = new Cat();
-	}
-	for (int i = 0; i < numAnimals; ++i) {
-		delete animals[i];
-	}
-	return 0;
-}
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};

@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:39:34 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/07 17:32:22 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:09:10 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Brain::Brain()
 {
-	
 	std::cout << "Brain default constructor called" << std::endl;
 }
 
