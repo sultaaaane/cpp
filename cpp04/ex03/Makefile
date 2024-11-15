@@ -1,10 +1,18 @@
 NAME = Animal
 SRC =  main.cpp \
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp \
+		ICharacter.cpp \
+		IMateriaSource.cpp \
+		free.cpp
 		
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 
 all : $(NAME)
 

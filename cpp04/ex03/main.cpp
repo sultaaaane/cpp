@@ -6,26 +6,34 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:01:18 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/08 11:10:26 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:47:42 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
+#include "free.hpp"
 
 int main()
 {
-	const int numAnimals = 10;
-	Animal* animals[numAnimals];
-	for (int i = 0; i < numAnimals / 2; ++i) {
-		animals[i] = new Dog();
-	}
-	for (int i = numAnimals / 2; i < numAnimals; ++i) {
-		animals[i] = new Cat();
-	}
-	for (int i = 0; i < numAnimals; ++i) {
-		delete animals[i];
-	}
+	IMateriaSource *src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter *me = new Character("me");
+	AMateria *tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter *bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob; 
+	delete me;
+	delete src;
 	return 0;
 }

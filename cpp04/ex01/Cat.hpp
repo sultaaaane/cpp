@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 23:13:10 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/07 17:14:14 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:16:26 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ class Cat : public Animal
 		virtual ~Cat();
 		Cat &operator=(const Cat &c);
 		void  makeSound() const;
-		
 };

@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:25:00 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/12 16:27:56 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/11/11 17:08:46 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/11/12 19:11:50 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include "AMateria.hpp"
+# include "IMateriaSource.hpp"
+# include "ICharacter.hpp"
 # include <iostream>
 # include <fstream>
 # include <string>
@@ -23,23 +25,14 @@
 # include <iomanip>
 # include <fcntl.h>
 
-class AMateria;
-
-class ICharacter
+class MateriaSource : public IMateriaSource
 {
-	protected:
-		std::string name;
-		AMateria *inventory[4];
-		int count;
+
 	public:
-		ICharacter();
-		ICharacter(ICharacter const &copy);
-		ICharacter &operator=(ICharacter const &copy);
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		MateriaSource();
+		~MateriaSource();
+		virtual void learnMateria(AMateria*);
+		virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif

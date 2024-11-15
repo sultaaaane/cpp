@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 11:25:00 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/12 16:27:56 by mbentahi         ###   ########.fr       */
+/*   Created: 2024/11/10 15:53:24 by mbentahi          #+#    #+#             */
+/*   Updated: 2024/11/11 17:38:05 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include "AMateria.hpp"
 # include <iostream>
@@ -23,23 +23,16 @@
 # include <iomanip>
 # include <fcntl.h>
 
-class AMateria;
-
-class ICharacter
+class Cure : public AMateria
 {
-	protected:
-		std::string name;
-		AMateria *inventory[4];
-		int count;
 	public:
-		ICharacter();
-		ICharacter(ICharacter const &copy);
-		ICharacter &operator=(ICharacter const &copy);
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		Cure();
+		Cure(Cure const &copy);
+		Cure &operator=(Cure const &copy);
+		virtual ~Cure();
+		Cure(std::string const &type);
+		AMateria *clone() const;
+		void use(ICharacter &target);
 };
 
 #endif
