@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 18:20:02 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/15 15:10:14 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:45:41 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ Character::Character(Character const &copy)
 
 Character::~Character()
 {
-	// for (int i = 0; i < 4; i++)
-	// {
-	// 	if (this->inventory[i] && count > 0)
-	// 		delete this->inventory[i];
-	// }
 	t_data *new_data;
 
 	new_data = global_data();
@@ -59,6 +54,9 @@ Character::~Character()
 
 Character	&Character::operator=(Character const &copy)
 {
+	t_data *new_data;
+
+	new_data = global_data();
 	if (this == &copy)
 		return (*this);
 	this->name = copy.name;
@@ -66,7 +64,10 @@ Character	&Character::operator=(Character const &copy)
 	for (int i = 0; i < 4; i++)
 	{
 		if (copy.inventory[i])
+		{
 			this->inventory[i] = copy.inventory[i]->clone();
+			ft_lstadd_back_free(&new_data, init_data(this->inventory[i]));
+		}
 	}
 	std::cout << "Character assignation operator called" << std::endl;
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:04:44 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/04 13:10:33 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:53:11 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ class WrongAnimal
 		WrongAnimal &operator=(const WrongAnimal &c);
 		std::string getType() const;
 		void setType(std::string type);
-		virtual void  makeSound() const;
+		void  makeSound() const;
 };

@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:10:16 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/15 15:10:38 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:44:50 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,39 @@ MateriaSource::~MateriaSource()
 		// 	delete inventory[i];
 		inventory[i] = 0;
 	}
+}
+
+MateriaSource::MateriaSource(const MateriaSource &c)
+{
+	t_data *new_data;
+
+	new_data = global_data();
+	std::cout << "MateriaSource copy constructor called" << std::endl;
+	
+	this->count = c.count;
+	for (int i = 0; i < c.count; i++)
+	{
+		this->inventory[i] = c.inventory[i]->clone();
+		ft_lstadd_back_free(&new_data, init_data(this->inventory[i]));
+	}
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &c)
+{
+	t_data *new_data;
+
+	new_data = global_data();
+	std::cout << "MateriaSource assignation operator called" << std::endl;
+	
+	if (this == &c)
+		return (*this);
+	this->count = c.count;
+	for (int i = 0; i < c.count; i++)
+	{
+		this->inventory[i] = c.inventory[i]->clone();
+		ft_lstadd_back_free(&new_data, init_data(this->inventory[i]));
+	}
+	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria *m)

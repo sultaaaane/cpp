@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:08:46 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/12 19:11:50 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:40:18 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource();
 		~MateriaSource();
+		MateriaSource(const MateriaSource &c);
+		MateriaSource &operator=(const MateriaSource &c);
 		virtual void learnMateria(AMateria*);
 		virtual AMateria* createMateria(std::string const & type);
 };

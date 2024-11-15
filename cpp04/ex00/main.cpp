@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:01:18 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/11/04 13:33:14 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:51:27 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,9 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 	wrong->makeSound();
+	delete meta;
+	delete j;
+	delete i;
+	delete wrong;
 	return 0;
 }
