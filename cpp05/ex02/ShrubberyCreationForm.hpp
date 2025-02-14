@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 17:34:26 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/12/22 18:31:39 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/02/11 19:38:45 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/02/12 17:11:56 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
-int main(void)
+#include "AForm.hpp"
+
+class ShrubberyCreationForm : public Form
 {
-	Fixed a;
-	Fixed const b(Fixed(5.05f) * Fixed(2));
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
-	std::cout << Fixed::min(a, b) << std::endl;
-	return 0;  
-}
+	private:
+		std::string target;
+	public:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(ShrubberyCreationForm const &copy);
+		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &copy);
+		~ShrubberyCreationForm();
+		void execute(Bureaucrat const &executor) const;
+};

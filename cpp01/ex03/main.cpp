@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 14:48:43 by mbentahi          #+#    #+#             */
-/*   Updated: 2024/08/30 20:24:16 by mbentahi         ###   ########.fr       */
+/*   Updated: 2024/12/07 13:46:49 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	HumanA::print("Hello");
 	return 0;
 }

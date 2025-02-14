@@ -1,0 +1,19 @@
+NAME = Bureaucrat
+SRC =  Bureaucrat.cpp \
+	   Form.cpp \
+	   main.cpp
+
+OBJ = $(SRC:.cpp=.o)
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+all : $(NAME)
+
+$(NAME) : $(OBJ)
+	$(CXX) $(SRC) $(CXXFLAGS) -o $(NAME)
+clean :
+	rm -f $(OBJ)
+fclean : clean
+	rm -f $(NAME)
+re : fclean all
+.PHONY : all clean fclean re
+.SECONDARY : $(OBJ)
