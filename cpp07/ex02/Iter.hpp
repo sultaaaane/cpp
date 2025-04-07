@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 01:08:35 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/03 11:10:15 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/03 14:38:30 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/06 16:34:49 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <string>
-#include <iomanip>
-#include <limits>
-#include <cmath>
 
-class ScalarConverter
+template <typename T>
+void iter(T *arr, int size, void (*f)(T &))
 {
-private:
-	std::string scalar;
-	std::string input;
-	int i;
-	char c;
-	float f;
-	double d;
-public:
-
-	ScalarConverter(std::string scalar);
-	ScalarConverter(ScalarConverter const &o);
-	ScalarConverter &operator=(ScalarConverter const &o);
-	~ScalarConverter();
-
-	void toChar();
-	void toInt();
-	void toFloat();
-	void toDouble();
-};
+	if (arr == NULL || size == 0 || f == NULL)
+		return;
+	for (int i = 0; i < size; i++)
+		f(arr[i]);
+}

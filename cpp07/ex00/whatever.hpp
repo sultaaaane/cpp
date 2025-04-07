@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 01:08:35 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/03 11:10:15 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/03 14:38:30 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/06 16:09:37 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <string>
-#include <iomanip>
-#include <limits>
-#include <cmath>
 
-class ScalarConverter
+template <typename T>
+void swap(T &a, T &b)
 {
-private:
-	std::string scalar;
-	std::string input;
-	int i;
-	char c;
-	float f;
-	double d;
-public:
+	T c;
+	c = a;
+	a = b;
+	b = c;
+}
 
-	ScalarConverter(std::string scalar);
-	ScalarConverter(ScalarConverter const &o);
-	ScalarConverter &operator=(ScalarConverter const &o);
-	~ScalarConverter();
+template <typename T>
+T min(T a, T b)
+{
+	return (a < b ? a : b);
+}
 
-	void toChar();
-	void toInt();
-	void toFloat();
-	void toDouble();
-};
+template <typename T>
+T max(T a, T b)
+{
+	return (a > b ? a : b);
+}
