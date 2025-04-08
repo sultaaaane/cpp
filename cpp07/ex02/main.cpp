@@ -6,46 +6,106 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 15:38:01 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/07 13:24:59 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:43:23 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Iter.hpp"
 
+#include <iostream>
+#include <cstdlib>
+#include "Array.hpp"
 
-void ft_tolower(char &arr)
+#define MAX_VAL 750
+int main(int, char**)
 {
-	arr = std::tolower(static_cast<unsigned char>(arr));
-}
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp;
+        try
+        {
+            for (int i = 0; i < MAX_VAL; i++)
+                std::cout << "tmp[" << i << "]:\t" << tmp[i] << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\t';
+            std::cerr << "You tried to access past the last element of the array" << std::endl;
+        }
+        tmp = numbers;
+        Array<int> test(tmp);
 
-void ft_toupper(char &arr)
-{
-	arr = std::toupper(static_cast<unsigned char>(arr));
-}
+        try
+        {
+        for (int i = 0; i < MAX_VAL; i++)
+        {
+            if (tmp[i] != test[i])
+            {
+                std::cerr << "didn't save the same value!!" << std::endl;
+                return 1;
+            }
+            // std::cout << "tmp[" << i << "]:\t" << tmp[i] << std::endl; //uncomment these two lines to see the arrays have the same values
+            // std::cout << "test[" << i << "]:\t" << test[i] << std::endl;
+        }
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\t';
+            std::cerr << "You tried to access past the last element of the array" << std::endl;
+        }
 
-int main()
-{
-	char a[] = {'A', 'B', 'C'};
+        std::cout << std::endl << "test[1]:\t" << test[1] << std::endl;
+        std::cout << "tmp[1]:\t\t" << tmp[1] << std::endl << std::endl;
 
-	std::cout << "Original:" <<
-	"\n\ta[0]: " << a[0] <<
-	"\n\ta[1]: " << a[1] <<
-	"\n\ta[2]: " << a[2] <<
-	std::endl << std::endl;
+        test[1] = 123456789;
 
-	::iter(a, sizeof(a) / sizeof(char), ft_tolower);
+        std::cout << "test[1]:\t" << test[1] << std::endl;
+        std::cout << "tmp[1]:\t\t" << tmp[1] << std::endl << std::endl;
+    }
 
-	std::cout << "Changed:" <<
-	"\n\ta[0]: " << a[0] <<
-	"\n\ta[1]: " << a[1] <<
-	"\n\ta[2]: " << a[2] <<
-	std::endl << std::endl;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        // std::cout << "index was -2" << std::endl;
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        // std::cout << "tried to access past the last element of the array" << std::endl;
+    }
 
-	::iter(a, 2, ft_toupper);
-
-	std::cout << "Changed:" <<
-	"\n\ta[0]: " << a[0] <<
-	"\n\ta[1]: " << a[1] <<
-	"\n\ta[2]: " << a[2] <<
-	std::endl << std::endl;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     std::cout << numbers[i] << std::endl;
+    // }
+    return 0;
 }

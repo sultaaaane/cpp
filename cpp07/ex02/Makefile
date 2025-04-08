@@ -1,10 +1,10 @@
-NAME = Iter
+NAME = Array
 SRC =  main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
-HEADERS = Iter.hpp \
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
+HEADERS = Array.hpp \
 
 all : $(NAME)
 
