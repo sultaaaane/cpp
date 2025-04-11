@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 01:08:35 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/03 11:10:15 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/10 14:16:00 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class ScalarConverter
 {
 private:
 	std::string scalar;
-	std::string input;
 	int i;
 	char c;
 	float f;
@@ -34,8 +33,5 @@ public:
 	ScalarConverter &operator=(ScalarConverter const &o);
 	~ScalarConverter();
 
-	void toChar();
-	void toInt();
-	void toFloat();
-	void toDouble();
+	static void convert(const std::string &literal);
 };

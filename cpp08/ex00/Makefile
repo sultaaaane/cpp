@@ -1,15 +1,14 @@
-NAME = scalar
+NAME = template
 SRC =  main.cpp \
-	   ScalarConverter.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+HEADERS = whatever.hpp \
+
 all : $(NAME)
 
-
-
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) $(HEADERS)
 	$(CXX) $(SRC) $(CXXFLAGS) -o $(NAME)
 clean :
 	rm -f $(OBJ)

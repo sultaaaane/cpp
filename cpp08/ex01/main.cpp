@@ -5,21 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 01:03:13 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/10 14:14:09 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/06 15:38:01 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/06 16:06:00 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "whatever.hpp"
 
-#include <iostream>
-
-int main(int argc, char** argv) {
-    if (argc != 2) {
-        std::cout << "Usage: ./convert <literal>" << std::endl;
-        return 1;
-    }
-
-    ScalarConverter::convert(argv[1]);
-    return 0;
+int main(void)
+{
+	int a = 2;
+	int b = 3;
+	::swap(a, b);
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << min(a, b) << std::endl;
+	std::cout << "max( a, b ) = " << max(a, b) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min(c, d) << std::endl;
+	std::cout << "max( c, d ) = " << ::max(c, d) << std::endl;
+	return 0;
 }
