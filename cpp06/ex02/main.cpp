@@ -5,40 +5,9 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 13:14:29 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/17 16:18:18 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/16 14:53:36 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/17 13:57:36 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-int main()
-{
-	try
-	{
-		{
-			Bureaucrat a("sultane", 1);
-			std::cout << a;
-			a.inc();
-			std::cout << a;
-			a.dec();
-			std::cout << a;
-		}
-		{
-			Bureaucrat b;
-			std::cout << b;
-			b.inc();
-			std::cout << b;
-			b.dec();
-			std::cout << b;
-		}
-		{
-			Bureaucrat c("sultane 2", 160);
-			std::cout << c;
-			c.inc();
-		}
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+#include "Base.hpp"

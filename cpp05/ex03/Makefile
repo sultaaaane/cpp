@@ -9,7 +9,7 @@ SRC =  Bureaucrat.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
 all : $(NAME)
 
 $(NAME) : $(OBJ)

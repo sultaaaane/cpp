@@ -1,6 +1,6 @@
-NAME = Serialize
+NAME = Identify
 SRC =  main.cpp \
-	   Serialize.cpp
+	   Identify.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++

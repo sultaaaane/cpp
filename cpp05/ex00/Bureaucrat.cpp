@@ -6,13 +6,13 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:15:08 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/02/08 10:31:23 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/17 16:03:50 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name("Default"), grade(150)
 {
 	std::cout << "Default Bureaucrat Constructure" << std::endl;
 }
@@ -64,7 +64,7 @@ std::string Bureaucrat::getName() const
 
 std::ostream &operator<<(std::ostream &c, Bureaucrat const &b)
 {
-	c << b.getName() << " , bureaucrat grade" << b.getGrade() << "." << std::endl;
+	c << b.getName() << " , bureaucrat grade " << b.getGrade() << "." << std::endl;
 	return c;
 }
 

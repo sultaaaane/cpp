@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 13:14:29 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/17 16:39:05 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/16 15:01:44 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/17 13:57:50 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
-int main()
+#pragma once
+
+#include <iostream>
+#include <string>
+#include <stdint.h>
+#include <stdlib.h>
+
+class Base
 {
-		try
-		{
-			Bureaucrat a("Assistant", 140);
-			Bureaucrat b("CEO", 1);
-			std::cout << a;
-			std::cout << b;
-			Form c("Rent Contract", 145, 100);
-
-			std::cout << c;
-
-			c.beSigned(a);
-			a.signForm(c);
-			std::cout << c;
-			c.beSigned(b);
-			std::cout << c;
-			b.signForm(c);
-		}
-		catch (std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-}
+public:
+	virtual ~Base() {}
+};

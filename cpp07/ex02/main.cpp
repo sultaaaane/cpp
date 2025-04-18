@@ -6,15 +6,13 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 15:38:01 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/07 23:43:23 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:36:05 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <iostream>
-#include <cstdlib>
 #include "Array.hpp"
-
+#include <stdlib.h>
 #define MAX_VAL 750
 int main(int, char**)
 {
@@ -29,46 +27,9 @@ int main(int, char**)
     }
     //SCOPE
     {
-        Array<int> tmp;
-        try
-        {
-            for (int i = 0; i < MAX_VAL; i++)
-                std::cout << "tmp[" << i << "]:\t" << tmp[i] << std::endl;
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\t';
-            std::cerr << "You tried to access past the last element of the array" << std::endl;
-        }
-        tmp = numbers;
+        Array<int> tmp = numbers;
         Array<int> test(tmp);
-
-        try
-        {
-        for (int i = 0; i < MAX_VAL; i++)
-        {
-            if (tmp[i] != test[i])
-            {
-                std::cerr << "didn't save the same value!!" << std::endl;
-                return 1;
-            }
-            // std::cout << "tmp[" << i << "]:\t" << tmp[i] << std::endl; //uncomment these two lines to see the arrays have the same values
-            // std::cout << "test[" << i << "]:\t" << test[i] << std::endl;
-        }
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\t';
-            std::cerr << "You tried to access past the last element of the array" << std::endl;
-        }
-
-        std::cout << std::endl << "test[1]:\t" << test[1] << std::endl;
-        std::cout << "tmp[1]:\t\t" << tmp[1] << std::endl << std::endl;
-
-        test[1] = 123456789;
-
-        std::cout << "test[1]:\t" << test[1] << std::endl;
-        std::cout << "tmp[1]:\t\t" << tmp[1] << std::endl << std::endl;
+        tmp = test;
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -83,29 +44,23 @@ int main(int, char**)
     {
         numbers[-2] = 0;
     }
-    catch(const std::exception& e)
+    catch(const std::out_of_range& e)
     {
         std::cerr << e.what() << '\n';
-        // std::cout << "index was -2" << std::endl;
     }
     try
     {
         numbers[MAX_VAL] = 0;
     }
-    catch(const std::exception& e)
+    catch(const std::out_of_range& e)
     {
         std::cerr << e.what() << '\n';
-        // std::cout << "tried to access past the last element of the array" << std::endl;
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
     // for (int i = 0; i < MAX_VAL; i++)
     // {
-    //     std::cout << numbers[i] << std::endl;
+    //     numbers[i] = rand();
     // }
+    delete [] mirror;
     return 0;
 }
