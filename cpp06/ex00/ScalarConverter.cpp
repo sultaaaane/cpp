@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 01:08:37 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/20 11:09:50 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:47:15 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,6 @@ void ScalarConverter::convert(const std::string &literal)
 		std::cout << "Invalid literal format" << std::endl;
 		return;
 	}
-
 	if (i < 0 || i > 127)
 		std::cout << "char: impossible" << std::endl;
 	else if (!isprint(c))

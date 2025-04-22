@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:53:36 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/22 13:11:22 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:41:05 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,5 @@ int main()
 	std::cout << "Deserialized data: " << deserializedData->f << std::endl;
 	std::cout << "Address of original data: " << &data << std::endl;
 	std::cout << "Address of deserialized data: " << deserializedData << std::endl;
-	std::cout << "Size of Data struct: " << sizeof(Data) << std::endl;
-	std::cout << "Size of uintptr_t: " << sizeof(uintptr_t) << std::endl;
-	std::cout << "Size of Serializer class: " << sizeof(Serializer) << std::endl;
-	std::cout << "Size of Serializer::serialize: " << sizeof(&Serializer::serialize) << std::endl;
-	
-	
+	return 0;
 }

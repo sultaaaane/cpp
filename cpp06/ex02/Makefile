@@ -1,6 +1,6 @@
 NAME = Identify
 SRC =  main.cpp \
-	   Identify.cpp
+
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
