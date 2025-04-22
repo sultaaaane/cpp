@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:53:36 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/16 17:48:44 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:11:22 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ int main()
 	data.f = 3.14f;
 
 	uintptr_t raw = serializer.serialize(&data);
+	std::cout << "Original data: " << data.s << std::endl;
+	std::cout << "Original data: " << data.i << std::endl;
+	std::cout << "Original data: " << data.c << std::endl;
+	std::cout << "Original data: " << data.f << std::endl;
 	std::cout << "Serialized data: " << raw << std::endl;
 	
 	Data* deserializedData = serializer.deserialize(raw);

@@ -4,7 +4,7 @@ SRC =  main.cpp \
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
-HEADERS = whatever.hpp \
+HEADERS = easyfind.hpp \
 
 all : $(NAME)
 

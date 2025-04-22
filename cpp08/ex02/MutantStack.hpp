@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 01:03:13 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/20 11:08:20 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/21 19:42:33 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/21 19:44:48 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
 #include <iostream>
+#include <stack>
+#include <list>
 
-int main(int argc, char **argv)
+template <typename T>
+class MutantStack : public std::stack<T>
 {
-    if (argc != 2)
-    {
-        std::cout << "Usage: ./convert <literal>" << std::endl;
-        return 1;
-    }
-
-    ScalarConverter::convert(argv[1]);
-    return 0;
-}
+	public:
+			
+};

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 01:03:13 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/20 11:08:20 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/19 16:24:35 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/20 11:02:47 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
 #include <iostream>
+#include <vector>
+#include <list>
+#include <deque>
+#include <algorithm>
 
-int main(int argc, char **argv)
+template <typename T>
+typename T::iterator easyfind(T &container, int value)
 {
-    if (argc != 2)
-    {
-        std::cout << "Usage: ./convert <literal>" << std::endl;
-        return 1;
-    }
-
-    ScalarConverter::convert(argv[1]);
-    return 0;
+	typename T::iterator it = std::find(container.begin(), container.end(), value);
+	if (it == container.end())
+		throw std::runtime_error("Value not found");
+	return it;
 }

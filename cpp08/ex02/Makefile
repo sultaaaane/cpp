@@ -1,11 +1,12 @@
 NAME = template
 SRC =  main.cpp \
-	   span.cpp
+	   MutantStack.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
-HEADERS = span.hpp \
+HEADERS = MutantStack.hpp \
+	   	  MutantStack.tpp
 
 all : $(NAME)
 

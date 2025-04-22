@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 01:08:37 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/10 14:15:55 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/20 11:09:50 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,13 @@ void ScalarConverter::convert(const std::string &literal)
 	{
 		c = 0;
 		i = 0;
-		f = literal == "+inff" ? std::numeric_limits<float>::infinity() : literal == "-inff" ? -std::numeric_limits<float>::infinity()
-																							 : std::numeric_limits<float>::quiet_NaN();
+		if (literal == "+inff")
+			f = std::numeric_limits<float>::infinity();
+		else if (literal == "-inff")
+			f = -std::numeric_limits<float>::infinity();
+		else
+			f = std::numeric_limits<float>::quiet_NaN();
+
 		d = static_cast<double>(f);
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -104,8 +109,12 @@ void ScalarConverter::convert(const std::string &literal)
 	{
 		c = 0;
 		i = 0;
-		d = literal == "+inf" ? std::numeric_limits<double>::infinity() : literal == "-inf" ? -std::numeric_limits<double>::infinity()
-																							: std::numeric_limits<double>::quiet_NaN();
+		if (literal == "+inf")
+			d = std::numeric_limits<double>::infinity();
+		else if (literal == "-inf")
+			d = -std::numeric_limits<double>::infinity();
+		else
+			d = std::numeric_limits<double>::quiet_NaN();
 		f = static_cast<float>(d);
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;

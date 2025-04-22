@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 01:03:13 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/20 11:08:20 by mbentahi         ###   ########.fr       */
+/*   Created: 2025/04/20 13:43:49 by mbentahi          #+#    #+#             */
+/*   Updated: 2025/04/20 21:00:09 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#pragma once
 
 #include <iostream>
-
-int main(int argc, char **argv)
+#include <vector>
+#include <algorithm>
+#include <climits>
+class Span
 {
-    if (argc != 2)
-    {
-        std::cout << "Usage: ./convert <literal>" << std::endl;
-        return 1;
-    }
-
-    ScalarConverter::convert(argv[1]);
-    return 0;
-}
+	private:
+		unsigned int N;
+		int *Array;
+		unsigned int counter;
+	public:
+		Span();
+		Span(unsigned int);
+		Span(Span const &);
+		Span &operator=(Span const &);
+		~Span();
+		void addNumber(int);
+		void addNumber(std::vector<int>::iterator begin,std::vector<int>::iterator end);
+		int longestSpan();
+		int shortestSpan();
+		void show();
+};
