@@ -6,12 +6,11 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 15:38:01 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/07 13:24:59 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/27 15:59:57 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Iter.hpp"
-
 
 void ft_tolower(char &arr)
 {
@@ -27,25 +26,16 @@ int main()
 {
 	char a[] = {'A', 'B', 'C'};
 
-	std::cout << "Original:" <<
-	"\n\ta[0]: " << a[0] <<
-	"\n\ta[1]: " << a[1] <<
-	"\n\ta[2]: " << a[2] <<
-	std::endl << std::endl;
+	std::cout << "Original:" << "\n\ta[0]: " << a[0] << "\n\ta[1]: " << a[1] << "\n\ta[2]: " << a[2] << std::endl
+			  << std::endl;
 
 	::iter(a, sizeof(a) / sizeof(char), ft_tolower);
 
-	std::cout << "Changed:" <<
-	"\n\ta[0]: " << a[0] <<
-	"\n\ta[1]: " << a[1] <<
-	"\n\ta[2]: " << a[2] <<
-	std::endl << std::endl;
+	std::cout << "Changed:" << "\n\ta[0]: " << a[0] << "\n\ta[1]: " << a[1] << "\n\ta[2]: " << a[2] << std::endl
+			  << std::endl;
 
 	::iter(a, 2, ft_toupper);
 
-	std::cout << "Changed:" <<
-	"\n\ta[0]: " << a[0] <<
-	"\n\ta[1]: " << a[1] <<
-	"\n\ta[2]: " << a[2] <<
-	std::endl << std::endl;
+	std::cout << "Changed:" << "\n\ta[0]: " << a[0] << "\n\ta[1]: " << a[1] << "\n\ta[2]: " << a[2] << std::endl
+			  << std::endl;
 }

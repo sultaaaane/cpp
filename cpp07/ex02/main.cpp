@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/06 15:38:01 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/17 13:36:05 by mbentahi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include "Array.hpp"
-#include <stdlib.h>
+
 #define MAX_VAL 750
 int main(int, char**)
 {
@@ -29,7 +17,6 @@ int main(int, char**)
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
-        tmp = test;
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -44,7 +31,7 @@ int main(int, char**)
     {
         numbers[-2] = 0;
     }
-    catch(const std::out_of_range& e)
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
@@ -52,15 +39,15 @@ int main(int, char**)
     {
         numbers[MAX_VAL] = 0;
     }
-    catch(const std::out_of_range& e)
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
 
-    // for (int i = 0; i < MAX_VAL; i++)
-    // {
-    //     numbers[i] = rand();
-    // }
-    delete [] mirror;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
     return 0;
 }

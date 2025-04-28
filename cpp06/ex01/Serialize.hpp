@@ -6,7 +6,7 @@
 /*   By: mbentahi <mbentahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:01:44 by mbentahi          #+#    #+#             */
-/*   Updated: 2025/04/16 17:46:02 by mbentahi         ###   ########.fr       */
+/*   Updated: 2025/04/22 17:56:03 by mbentahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ typedef struct Data
 
 class Serializer
 {
-	
-	public:
+	private:
 		Serializer();
+	public:
 		~Serializer();
 		Serializer(const Serializer& other);
 		Serializer& operator=(const Serializer& other);
