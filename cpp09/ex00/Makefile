@@ -1,11 +1,11 @@
-NAME = template
+NAME = btc
 SRC =  main.cpp \
-	   span.cpp
+	   BitcoinExchange.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
-HEADERS = span.hpp \
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
+HEADERS = BitcoinExchange.hpp \
 
 all : $(NAME)
 
