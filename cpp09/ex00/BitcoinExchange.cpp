@@ -22,7 +22,6 @@ BitcoinExchange::BitcoinExchange(std::string filename) : filename(filename)
 	if (!file.is_open())
 		throw std::runtime_error("Error: Could not open file" + filename);
 	file.close();
-		
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &c)
@@ -136,18 +135,17 @@ bool isValidValue(float value)
 
 void find_closest_date(std::map<std::string, float> &data, const std::string &date, float value)
 {
-    std::map<std::string, float>::iterator it = data.lower_bound(date);
+	std::map<std::string, float>::iterator it = data.lower_bound(date);
 
-    if (it == data.begin() && date < it->first)
-    {
-        std::cout << "Error: bad input => " << date << std::endl;
-        return;
-    }
+	if (it == data.begin() && date < it->first)
+	{
+		std::cout << "Error: bad input => " << date << std::endl;
+		return;
+	}
 
-    if (it == data.end() || it->first != date)
-        --it;
-
-    std::cout << date << " => " << value << " = " << (it->second * value) << std::endl;
+	if (it == data.end() || it->first != date)
+		--it;
+	std::cout << date << " => " << value << " = " << (it->second * value) << std::endl;
 }
 
 void BitcoinExchange::display()
@@ -155,10 +153,10 @@ void BitcoinExchange::display()
 	std::ifstream file(filename.c_str());
 
 	std::string line;
-	getline(file,line);
+	getline(file, line);
 	if (line.find("date | value") == std::string::npos)
 		throw std::runtime_error("Error: header incorrect 'date | value'");
-	while (getline(file,line))
+	while (getline(file, line))
 	{
 		std::stringstream ss(line);
 		std::string date;
@@ -176,9 +174,7 @@ void BitcoinExchange::display()
 			if (data.find(date) != data.end())
 				std::cout << date << " => " << value * data[date] << std::endl;
 			else
-				find_closest_date(data,date,value);
+				find_closest_date(data, date, value);
 		}
 	}
-	
-	
 }
