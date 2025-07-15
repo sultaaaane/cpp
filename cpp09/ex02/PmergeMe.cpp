@@ -2,7 +2,6 @@
 
 PmergeMe::PmergeMe()
 {
-	
 }
 
 PmergeMe::PmergeMe(const PmergeMe &other)
@@ -30,20 +29,27 @@ void PmergeMe::ParseInput(const std::string &input)
 {
 	std::istringstream iss(input);
 	int num;
-	// std::string leftover;
-	// std::cout << "Parsing input: " << input << std::endl;
-	while (iss >> num )
+	std::string token;
+
+	while (iss >> token)
 	{
-		std::cout << "Parsing input: " << num << std::endl;
-		// if (!leftover.empty() && leftover.find_first_not_of("0123456789") != std::string::npos)
-		// 	throw std::invalid_argument("Input must be a sequence of non-negative integers");
+		if (token.find_first_not_of("0123456789") != std::string::npos)
+			throw std::invalid_argument("Non-numeric input detected: " + token);
+		std::istringstream tokenStream(token);
+		tokenStream >> num;
+
+		if (tokenStream.fail() || !tokenStream.eof())
+			throw std::invalid_argument("Invalid number format: " + token);
 		if (num < 0 || num > std::numeric_limits<int>::max())
 			throw std::out_of_range("Input numbers must be non-negative integers");
+		if (std::find(vec.begin(), vec.end(), num) != vec.end())
+			throw std::invalid_argument("Duplicate number detected: " + token);
 		vec.push_back(num);
 		deq.push_back(num);
 	}
 	if (vec.empty() || deq.empty())
 		throw std::invalid_argument("Input cannot be empty");
+
 	if (vec.size() != deq.size())
 		throw std::length_error("Vector and Deque must have the same size");
 	vecCopy = vec;
@@ -51,29 +57,16 @@ void PmergeMe::ParseInput(const std::string &input)
 
 void PmergeMe::SortVector()
 {
-	// gettimeofday(&vstartTime, NULL);
 	v_start = clock();
 	mergeInsertSort(vec);
 	v_end = clock();
-	// timeval endTime;
-	// gettimeofday(&endTime, NULL);
-	// long seconds = endTime.tv_sec - vstartTime.tv_sec;
-	// long microseconds = endTime.tv_usec - vstartTime.tv_usec;
-	// velapsed = seconds + microseconds * 1e-6;
-
 }
 
 void PmergeMe::SortDeque()
 {
-	// gettimeofday(&dstartTime, NULL);
 	d_start = clock();
 	mergeInsertSort(deq);
 	d_end = clock();
-	// timeval endTime;
-	// gettimeofday(&endTime, NULL);
-	// long seconds = endTime.tv_sec - dstartTime.tv_sec;
-	// long microseconds = endTime.tv_usec - dstartTime.tv_usec;
-	// delapsed = seconds + microseconds * 1e-6;
 }
 
 void PmergeMe::PrintVector() const
@@ -92,17 +85,13 @@ void PmergeMe::PrintDeque() const
 
 void PmergeMe::vPrintTime() const
 {
-
-	std::cout << "Time to process a range of "<< vec.size() << " elements with std::vector :" << std::fixed << std::setprecision(6) << static_cast<float>(v_end - v_start) /  CLOCKS_PER_SEC  << " seconds." << std::endl;
+	std::cout << "Time to process a range of " << vec.size() << " elements with std::vector :" << std::fixed << std::setprecision(6) << static_cast<float>(v_end - v_start) / CLOCKS_PER_SEC << " seconds." << std::endl;
 }
 
 void PmergeMe::dPrintTime() const
 {
-
-
-	std::cout << "Time to process a range of "<< deq.size() << " elements with std::deque :" << std::fixed << std::setprecision(6) << static_cast<float>(d_end - d_start) / CLOCKS_PER_SEC << " seconds." << std::endl;
+	std::cout << "Time to process a range of " << deq.size() << " elements with std::deque :" << std::fixed << std::setprecision(6) << static_cast<float>(d_end - d_start) / CLOCKS_PER_SEC << " seconds." << std::endl;
 }
-
 
 void PmergeMe::mergeInsertSort(std::vector<int> &vec)
 {
@@ -135,7 +124,6 @@ void PmergeMe::mergeInsertSort(std::vector<int> &vec)
 
 	std::vector<size_t> order = generate_jacobsthal_order(mins.size());
 
-	// Step 3: Insert into the sorted list using Jacobsthal order
 	for (size_t i = 0; i < order.size(); ++i)
 	{
 		size_t pos = order[i];
@@ -149,49 +137,50 @@ void PmergeMe::mergeInsertSort(std::vector<int> &vec)
 	vec = maxs;
 }
 
-std::vector<size_t> PmergeMe::generate_jacobsthal_order(size_t k) {
+std::vector<size_t> PmergeMe::generate_jacobsthal_order(size_t k)
+{
 	std::vector<size_t> order;
 	std::vector<size_t> jacob;
 	std::vector<bool> seen(k, false);
 
-	if (k == 0) return order;  // Edge case: empty input
+	if (k == 0)
+		return order;
 
 	jacob.push_back(0);
-	if (k == 1) {
+	if (k == 1)
+	{
 		order.push_back(0);
 		return order;
 	}
-
 	jacob.push_back(1);
-	if (k == 2) {
+	if (k == 2)
+	{
 		order.push_back(1);
 		order.push_back(0);
 		return order;
 	}
-
-	// Generate Jacobsthal numbers up to k
 	size_t next;
-	while (true) {
+
+	while (true)
+	{
 		next = jacob.back() + 2 * jacob[jacob.size() - 2];
-		if (next >= k) break;
+		if (next >= k)
+			break;
 		jacob.push_back(next);
 	}
-
-	// Insert Jacobsthal indices in reverse order
-	for (size_t i = jacob.size(); i-- > 0;) {
-		if (jacob[i] < k && !seen[jacob[i]]) {
+	for (size_t i = jacob.size(); i-- > 0;)
+	{
+		if (jacob[i] < k && !seen[jacob[i]])
+		{
 			order.push_back(jacob[i]);
 			seen[jacob[i]] = true;
 		}
 	}
-
-	// Insert remaining indices in reverse order
-	for (size_t i = k; i-- > 0;) {
-		if (!seen[i]) {
+	for (size_t i = k; i-- > 0;)
+	{
+		if (!seen[i])
 			order.push_back(i);
-		}
 	}
-
 	return order;
 }
 
@@ -226,7 +215,6 @@ void PmergeMe::mergeInsertSort(std::deque<int> &deq)
 
 	std::vector<size_t> order = generate_jacobsthal_order(mins.size());
 
-	// Step 3: Insert into the sorted list using Jacobsthal order
 	for (size_t i = 0; i < order.size(); ++i)
 	{
 		size_t pos = order[i];
@@ -236,7 +224,6 @@ void PmergeMe::mergeInsertSort(std::deque<int> &deq)
 			maxs.insert(it, mins[pos]);
 		}
 	}
-	
 
 	deq = maxs;
 }

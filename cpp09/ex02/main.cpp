@@ -23,15 +23,12 @@ int main(int argc, char **argv)
 		std::cerr << "Usage: " << argv[0] << " <numbers>" << std::endl;
 		return 1;
 	}
-
 	PmergeMe pmergeMe;
 
 	try
 	{
 		for (int i = 1; i < argc; ++i)
-		{
 			pmergeMe.ParseInput(argv[i]);
-		}
 		std::cout << "Before: ";
 		pmergeMe.PrintVector();
 		pmergeMe.SortVector();

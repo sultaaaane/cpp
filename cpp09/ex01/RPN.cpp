@@ -59,9 +59,7 @@ void RPN::performOperation(const std::string &op)
 	else if (op == "/")
 	{
 		if (b == 0)
-		{
 			throw std::runtime_error("Error: division by zero");
-		}
 		stack.push(a / b);
 	}
 }
@@ -74,29 +72,20 @@ void RPN::calculate(const std::string &expression)
 	while (iss >> token)
 	{
 		if (isOperator(token))
-		{
 			performOperation(token);
-		}
 		else
 		{
 			char *end;
 			long num = std::strtol(token.c_str(), &end, 10);
 			if (*end != '\0')
-			{
-				throw std::runtime_error("Error: invalid token '" + token + "'");
-			}
+				throw std::runtime_error("Error: invalid");
 			if (num < 0 || num > 9)
-			{
 				throw std::runtime_error("Error: numbers must be between 0 and 9");
-			}
 			stack.push(static_cast<int>(num));
 		}
 	}
 
 	if (stack.size() != 1)
-	{
 		throw std::runtime_error("Error: invalid expression");
-	}
-
 	std::cout << stack.top() << std::endl;
 }
