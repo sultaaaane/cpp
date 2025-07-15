@@ -15,3 +15,37 @@
 
 #include "PmergeMe.hpp"
 #include <iostream>
+
+int main(int argc, char **argv)
+{
+	if (argc < 2)
+	{
+		std::cerr << "Usage: " << argv[0] << " <numbers>" << std::endl;
+		return 1;
+	}
+
+	PmergeMe pmergeMe;
+
+	try
+	{
+		for (int i = 1; i < argc; ++i)
+		{
+			pmergeMe.ParseInput(argv[i]);
+		}
+		std::cout << "Before: ";
+		pmergeMe.PrintVector();
+		pmergeMe.SortVector();
+		pmergeMe.SortDeque();
+		std::cout << "After: ";
+		pmergeMe.PrintVector();
+		pmergeMe.vPrintTime();
+		pmergeMe.dPrintTime();
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+		return 1;
+	}
+
+	return 0;
+}

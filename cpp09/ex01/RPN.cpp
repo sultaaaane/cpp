@@ -80,7 +80,7 @@ void RPN::calculate(const std::string &expression)
 		else
 		{
 			char *end;
-			long num = strtol(token.c_str(), &end, 10);
+			long num = std::strtol(token.c_str(), &end, 10);
 			if (*end != '\0')
 			{
 				throw std::runtime_error("Error: invalid token '" + token + "'");

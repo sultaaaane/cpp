@@ -160,9 +160,14 @@ void BitcoinExchange::display()
 	{
 		std::stringstream ss(line);
 		std::string date;
+		std::string leftover;
 		char pipe;
 		float value;
-		ss >> date >> pipe >> value;
+		if (!(ss >> date >> pipe >> value) || (ss >> leftover))
+		{
+			std::cout << "Error: bad input => " << line << std::endl;
+			continue;
+		}
 		if (!isValidDate(date))
 			std::cout << "Error: bad input => " << date << std::endl;
 		else if (value < 0)

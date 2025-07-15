@@ -1,11 +1,11 @@
-NAME = RPN
+NAME = PmergeMe
 SRC =  main.cpp \
-	   RPN.cpp
+	   PmergeMe.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
-HEADERS = RPN.hpp \
+HEADERS = PmergeMe.hpp \
 
 all : $(NAME)
 
